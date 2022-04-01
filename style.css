@@ -3,15 +3,17 @@
     padding: 0;
 }
 body{
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;   
+    max-width: 100%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;   
 
 }
 .main_container{    
     position: relative;
     background-size: contain;
     height: 100vh;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 .main_container img{    
     min-width: 100%;
@@ -21,7 +23,7 @@ body{
     background: linear-gradient(90deg, rgba(0,16,43,1) 10%, rgba(0,212,255,0.15199583251269255) 100%);
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     color: white;
 }
 .text_container {
@@ -63,19 +65,33 @@ body{
     cursor: pointer;
     border-radius: 20px;
 }
+.hire_me_button:hover{
+    background-color: rgb(11, 191, 194);
+    transition: background-color 0.3s ease-in;
+    border-radius: 17px;
+    box-shadow:  2px 2px 10px rgb(66, 178, 252);
+    transition: box-shadow 0.3s ease-in;
+    padding-top: -10px; 
+}
+.hire_me_button:hover a{   
+    font-size: 21px;
+    box-shadow:  2px 2px 10px rgb(66, 178, 252);
+    transition: box-shadow 0.3s ease-in;
+    
+}
 .hire_me_button a{
     position: absolute;
     text-decoration: none;
-    margin-top: 5px;
-    margin-left: 2px;
+    margin-top: 3px;
+    margin-left: 30px;
     font-size: 20px;
     font-weight: bold;
-    color: black;
+    color: black;    
 }
 
 .navbar {
     margin: auto;
-    width: 110%;
+    width: 100%;
     height: 8vh;
     background-color: rgba(0, 13, 39, 0.361);
     position: absolute;
@@ -135,11 +151,179 @@ body{
 .nav_item:hover a{
     color: black;
 }
+
+
+/* ------------------------------------------ */
 .main-container-2 {
     position: absolute;
+    display: flex;
+    justify-content: space-around;
     top: 97vh;
     height: 100vh;
     width: 100%;
-    background-color: blue;
+    background-color: #0e1144;
+}
+.main-image-bg {
+    flex-wrap: wrap;
+    min-width: 280px;
+    height: 400px;    
+    position: relative;
+    left: 0vw;
+    top: 20vh;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    object-fit: contain;
+    background-size: cover;
+    /* background-size: contain; */
+    
+}
+img.bg-image {
+    width: 280px;
+    height: 400px;
+    background-size:cover;
+    z-index: 0;
+    position: absolute;
+    border-radius: 10px;
+    object-fit: contain;
+    background-size: cover;
+    
+}
 
+.main-image-bg::before {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: linear-gradient(56deg, rgba(0,16,43,0.7206232834930848) 0%, rgba(0,91,124,1) 37%, rgba(0,95,129,0.0035364487591911242) 67%, rgba(0,212,255,0.15199583251269255) 100%);
+    z-index: 2;
+    opacity: 0;
+}
+
+.save-button {
+    position: absolute;    
+    background-color: red;
+    width: 70px;
+    height: 50px;
+    border-radius: 40px;
+    right: 5%;
+    top: -13%;
+    opacity: 0; 
+    z-index: 3;
+    
+}
+
+.save-button p{
+    position: absolute; 
+    color: white;   
+    font-weight: bold;
+    top: 30%;
+    left: 22%; 
+      
+}
+
+.option-bar{
+    width: 100%;
+    height: 50px;   
+    bottom: -15%;
+    z-index: 3;
+    position: absolute;
+    transform: translateY(0);
+    opacity: 0;
+}
+
+.web-link{
+    width: 160px;
+    height: 40px;
+    background-color: #ededed;
+    position: absolute;
+    left: 10px;
+    border-radius: 20px;    
+}
+.web-link p {
+    color: black;
+    position: absolute;
+    font-size: 21px;
+    top: 8px;  
+    left: 35px;  
+}
+.web-link img {
+    color: black;
+    position: absolute;
+    height: 20px;
+    top: 11px;
+    left: 8px;   
+}
+
+.upload {
+    width: 40px;
+    height: 40px;
+    background-color: #ededed;
+    border-radius: 50%;
+    display: inline;
+    left: 65%;
+    position: absolute;
+}
+.upload img {
+    color: black;
+    position: absolute;
+    font-size: 20px;
+    top: 8px;
+    left: 8px;    
+}
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ededed;
+    border-radius: 50%;
+    display: inline;
+    left: 82%;
+    position: absolute;
+}
+.menu-icon img {
+    color: black;
+    position: absolute;
+    font-size: 20px;
+    top: 11px;
+    left: 9px;   
+}
+.main-image-bg:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.45);
+    transition: box-shadow 0.1s;
+}
+.main-image-bg:hover.main-image-bg::before {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.main-image-bg:hover .save-button{
+    transform: translateY(60px);
+    transition: transform .5s;
+    opacity: 1;
+    z-index: 3;
+}
+.main-image-bg:hover .option-bar {
+    transform: translateY(-60px);
+    transition: transform .5s;
+    opacity: 1;
+    z-index: 3;
+}
+
+/* --footer-- */
+.footer {
+    top: 195vh;
+    height: 8vh;
+    width: 100%;
+    background-color: #0e1144;
+    position: absolute;
+    text-align: center;
+}
+.footer p{  
+    margin-top: 30px; 
+    bottom: 0%; 
+    color: white;   
 }
